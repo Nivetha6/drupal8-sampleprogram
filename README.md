@@ -9,4 +9,4 @@ RouteSubsciber.php - Where we say that for site information page - load this for
 ExtendedSiteInformationForm.php - We add the field site api key in buildForm() and saving the value in submitForm()
 welcome.schema.yml - config variable is created
  
-Page is created to return the json format of node for page content type.
+Page is created to return the json format of node for page content type.  http://localhost/page/apikey/node
