@@ -1,0 +1,7 @@
+welcome.page:
+  path: '/page/{config_id}/{nid}'
+  defaults:
+    _controller: '\Drupal\welcome\Controller\PageController::page'
+    _title: 'Json form of node details for page content type'
+  requirements:
+    _permission: 'access content'

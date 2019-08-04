@@ -1,0 +1,5 @@
+name: Welcome
+type: module
+descriptin: Sample program
+core: 8.x
+package: custom
