@@ -4,6 +4,9 @@ namespace Drupal\welcome\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\node\Entity\Node;
+
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
 /**
  * Defines PageController class.
  */
@@ -29,12 +32,8 @@ class PageController extends ControllerBase {
             if( $type != "page" || $config_id != $value_set)  {
               throw new \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException(); // Access denied
             }
-          $data = $serializer->serialize($node,'json',['plugin_id' => 'entity']);
-          return [
-              '#type' => 'markup',
-              '#markup' => $data
-              ,
-          ];
+         $data = $serializer->normalize($node,'json');
+           return new JsonResponse($data);
         }
       else
         throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException();  // 404, if node doesnt exists
