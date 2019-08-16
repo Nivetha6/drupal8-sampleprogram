@@ -1,4 +1,4 @@
-welcome.page:
+welcome.get:
   path: '/page/{config_id}/{nid}'
   defaults:
     _controller: '\Drupal\welcome\Controller\PageController::page'
